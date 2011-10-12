@@ -1,15 +1,15 @@
 <?php
 /*
     @author     : Surdeanu Mihai ;
-    @date       : 10 august 2011 ;
-    @version    : 2.0 ;
+    @date       : 28 septembrie 2011 ;
+    @version    : 2.2 ;
     @mybb       : compatibilitate cu MyBB 1.6 (orice versiuni) ;
     @description: Modificare pentru Sistemul de Limba Romana ;
     @homepage   : http://mybb.ro ! Te rugam sa ne vizitezi pentru ca nu ai ce pierde!
     @copyright  : Licenta speciala. Pentru mai multe detalii te rugam sa citesti sectiunea Licenta din cadrul fisierului 
                 ReadME.pdf care poate fi gasit in acest pachet. Iti multumim pentru intelegere!
     ====================================
-    Ultima modificare a codului : 05.08.2011 18:27
+    Ultima modificare a codului : 18.09.2011 14:26
 */
 
 // Poate fi acesat direct fisierul?
@@ -28,7 +28,7 @@ if (!$mybb->admin['permissions']['rolang']['news'])
 }
 
 // Se include fisierul de limba
-rolang_include_lang("global");
+rolang_include_lang("admin");
 
 //Menu
 $sub_tabs = array(
@@ -89,7 +89,7 @@ function rolang_displayNews($echo)
 {
     global $lang;
     // Se include fisierul de limba
-    rolang_include_lang("global");
+    rolang_include_lang("admin");
     $url = "http://mybb.ro/syndication.php?fid=49&limit=5";
     // datele sunt introduse intr-un tabel
     $table = new Table;
