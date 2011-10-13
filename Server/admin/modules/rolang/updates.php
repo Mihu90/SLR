@@ -1,7 +1,7 @@
 <?php
 /*
     @author     : Surdeanu Mihai ;
-    @date       : 9 octombrie 2011 ;
+    @date       : 12 octombrie 2011 ;
     @version    : 2.2 ;
     @mybb       : compatibilitate cu MyBB 1.6 (orice versiuni) ;
     @description: Modificare pentru Sistemul de Limba Romana ;
@@ -9,7 +9,7 @@
     @copyright  : Licenta speciala. Pentru mai multe detalii te rugam sa citesti sectiunea Licenta din cadrul fisierului 
                 ReadME.pdf care poate fi gasit in acest pachet. Iti multumim pentru intelegere!
     ====================================
-    Ultima modificare a codului : 05.10.2011 00:55
+    Ultima modificare a codului : 12.10.2011 20:58
 */
 
 // Poate fi acesat direct fisierul?
@@ -1051,8 +1051,7 @@ function rolang_displayUpdates($data, $echo)
             foreach($versiune as $realizare)
             {
                 $vector_compatibil = explode(",", $realizare['compatibil']);
-                //if (intval($langinfo['version']) < intval($realizare['destinat']) && in_array($versiune_mybb, $vector_compatibil))
-                if (true)
+                if (intval($langinfo['version']) < intval($realizare['destinat']) && in_array($versiune_mybb, $vector_compatibil))
                 {
                     $table->construct_cell($db->escape_string($realizare['pentru']), array('class' => 'align_center'));
                     $table->construct_cell("<div class=\"tooltip\">".intval($realizare['destinat'])." ( ".my_date($mybb->settings['dateformat'], intval($realizare['data']))." )<span class=\"classic\" style=\"color: #000000;\"><div class=\"float_left\">".$lang->sprintf($lang->updates_table_list_hover, $realizare['compatibil'])."</div></span></div>");
